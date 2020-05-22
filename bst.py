@@ -265,8 +265,11 @@ class BST:
         cur = self.root
 
         # progress pointers until cur.val == kq
-        while cur.val is not kq:
+        print("checking if cur.val is not kq")
+        while cur.val != kq:
+            print("moving pointers")
             parent = cur
+            print("checking if kq < cur.val")
             if kq < cur.val:
                 cur = parent.left
             else:
