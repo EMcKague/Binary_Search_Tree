@@ -22,7 +22,7 @@ class Student:
         return self.grade == kq.grade
 
     def __str__(self):
-        return 'Person(name=' + self.name + ', age=' + str(self.grade) + ')'
+        return 'name=' + self.name + ', age=' + str(self.grade)
 
 
 class TreeNode:
@@ -209,7 +209,7 @@ class BST:
         Returns:
             True if k is in the tree and successfully removed, otherwise False
         """
-        print("removing:", kq)
+        # print("removing:", kq)
 
         # Check if Tree is empty
         if not self.root:
@@ -220,7 +220,7 @@ class BST:
             return False
 
         # if data is in root node
-        if self.root.val == (kq):
+        if self.root == kq:
             # print("removing root node")
             # if root has no children
             if not self.root.left and not self.root.right:
