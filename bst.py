@@ -33,8 +33,10 @@ class TreeNode:
 
     def insert(self, data):
         '''
-        Compares the data being passed to the current node, if less goes left, if greater or eqaul moves right, until it finds an empty node to insert.
+        Compares the data being passed to the current node, if less goes left, if greater or eqaul moves right,
+        until it finds an empty node to insert.
         '''
+
         # if self.val is less than data
         if self.val > data:
             # if there is already a node on the left
@@ -209,7 +211,7 @@ class BST:
         Returns:
             True if k is in the tree and successfully removed, otherwise False
         """
-        # print("removing:", kq)
+        print("removing:", kq)
 
         # Check if Tree is empty
         if not self.root:
@@ -220,8 +222,8 @@ class BST:
             return False
 
         # if data is in root node
-        if self.root == kq:
-            # print("removing root node")
+        if self.root.val == kq:
+            print("removing root node")
             # if root has no children
             if not self.root.left and not self.root.right:
                 self.root = None
@@ -274,6 +276,7 @@ class BST:
 
         # if cur has no children
         if not cur.left and not cur.right:
+            print("node to remove has no child")
             if kq < parent.val:
                 parent.left = None
                 return True
@@ -283,7 +286,7 @@ class BST:
 
         # cur only has left child
         if cur.left and not cur.right:
-            print("parent:", parent, "cur:", cur)
+            print("node to remove has left child")
             if kq < parent.val:
                 parent.left = cur.left
                 return True
@@ -293,6 +296,7 @@ class BST:
 
         # cur only has right child
         if not cur.left and cur.right:
+            print("node to remove has right child")
             if kq < parent.val:
                 parent.left = cur.right
                 return True
@@ -302,6 +306,7 @@ class BST:
 
         # cur has right and left child
         if cur.left and cur.right:
+            print("node to remove has two children")
             lmParent = cur
             lMost = lmParent.right
 
