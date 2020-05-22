@@ -211,7 +211,7 @@ class BST:
         Returns:
             True if k is in the tree and successfully removed, otherwise False
         """
-        print("removing:", kq)
+        # print("removing:", kq)
 
         # Check if Tree is empty
         if not self.root:
@@ -223,7 +223,7 @@ class BST:
 
         # if data is in root node
         if self.root.val == kq:
-            print("removing root node")
+            # print("removing root node")
             # if root has no children
             if not self.root.left and not self.root.right:
                 self.root = None
@@ -265,11 +265,11 @@ class BST:
         cur = self.root
 
         # progress pointers until cur.val == kq
-        print("checking if cur.val is not kq")
+        # print("checking if cur.val is not kq")
         while cur.val != kq:
-            print("moving pointers")
+            # print("moving pointers")
             parent = cur
-            print("checking if kq < cur.val")
+            # print("checking if kq < cur.val")
             if kq < cur.val:
                 cur = parent.left
             else:
@@ -279,7 +279,7 @@ class BST:
 
         # if cur has no children
         if not cur.left and not cur.right:
-            print("node to remove has no child")
+            # print("node to remove has no child")
             if kq < parent.val:
                 parent.left = None
                 return True
@@ -289,7 +289,7 @@ class BST:
 
         # cur only has left child
         if cur.left and not cur.right:
-            print("node to remove has left child")
+            # print("node to remove has left child")
             if kq < parent.val:
                 parent.left = cur.left
                 return True
@@ -299,7 +299,7 @@ class BST:
 
         # cur only has right child
         if not cur.left and cur.right:
-            print("node to remove has right child")
+            # print("node to remove has right child")
             if kq < parent.val:
                 parent.left = cur.right
                 return True
@@ -309,7 +309,7 @@ class BST:
 
         # cur has right and left child
         if cur.left and cur.right:
-            print("node to remove has two children")
+            # print("node to remove has two children")
             lmParent = cur
             lMost = lmParent.right
 
